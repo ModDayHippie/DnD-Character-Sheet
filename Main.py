@@ -18,13 +18,17 @@
 
 # Imports
 import PySimpleGUI as sg
+#import pandas as pd
 
 # All the stuff inside your window.
 # make sure each line in the gui is spaced by one gap in the code
 
-sg.theme('DarkGrey3')
+sg.theme('DarkTeal9')
 
-layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(size=10),
+#EXCEL_FILE = 'Items.ods'
+#df = pd.read_excel(EXCEL_FILE)
+
+layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
              sg.Text('Class:'),
              sg.InputText(size=10), sg.Text('Lv'), sg.InputText(size=3)],
 
@@ -36,7 +40,7 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
             [sg.Text('Dexterity'), sg.InputText(size=6), sg.Text('Weapon Attacks'), sg.Text('Bonus To Attack'),
              sg.Text('Damage'), sg.Text('Skills')],
 
-            [sg.Text('Constitution'), sg.InputText(size=3), sg.InputText(size=15), sg.InputText(size=13),
+            [sg.Text('Constitution'), sg.InputText(size=3), sg.InputText(key=1, size=15), sg.InputText(size=13),
              sg.InputText(size=8), sg.Checkbox("Acrobatics", key="-CHECKBOX-", enable_events=True)],
 
 
@@ -112,6 +116,10 @@ window = sg.Window('Digital Character Sheet V0.0.2', layout, size=(600, 700))
 
 while True:
     event, values = window.read()
+
+    #if event in ('sg.InputText(key=1, size=15) = Club
+
+
 
     # if user closes window or clicks cancel
     if event == sg.WIN_CLOSED or event == 'Cancel':
