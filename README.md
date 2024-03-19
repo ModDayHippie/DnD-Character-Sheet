@@ -9,5 +9,7 @@ before i get them automated
 
 *Moduals Needed*
 Pysimplegui
+
 Pandas
+
 Pandasgui
