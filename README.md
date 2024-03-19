@@ -14,3 +14,8 @@ before i get them automated
 - Pandas
 
 - Pandasgui
+
+  *PS*
+
+  Im using the issues tab as a to do tab aswell
+  
