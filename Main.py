@@ -16,10 +16,11 @@
 # Item Spreadsheet Source
 # https://docs.google.com/spreadsheets/d/10q9-pMNvQZE5T7Zuco4PJsYW-rwES_LfMp0-wUerfyw/edit#gid=0
 # https://www.reddit.com/r/learnpython/comments/vlnb0c/pysimplegui_window_resizes_when_pandasgui/
+
 # Imports
 from openpyxl import load_workbook
 import PySimpleGUI as sg
-
+import csv
 import pandas as pd
 from pandasgui import show
 from pandasgui.datasets import pokemon, titanic, all_datasets
@@ -30,15 +31,16 @@ from pandasgui.datasets import pokemon, titanic, all_datasets
 sg.theme('DarkTeal9')
 
 EXCEL_FILE1 = 'Items2.ods'
-EXCEL_FILE2 = 'Magic.ods'
+# EXCEL_FILE2 = 'Magic.ods'
 df = pd.read_excel(EXCEL_FILE1)
-# df1 = pd.read_excel(EXCEL_FILE2)
+# df = pd.read_excel(EXCEL_FILE2)
+
 
 layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
              sg.Text('Class:'),
              sg.InputText(size=10), sg.Text('Lv'), sg.InputText(size=3)],
 
-            [sg.Text('Strength'), sg.InputText(size=3), sg.Text('Max Hp'), sg.InputText(size=3),
+            [sg.Text('Strength'), sg.InputText(size=3, key='HP'), sg.Text('Max Hp'), sg.InputText(size=3),
              sg.Text('Current Hp'),
              sg.InputText(size=3), sg.Text('Amour Class'), sg.InputText(size=3),sg.Text('Init'),
              sg.InputText(size=3),sg.Text('Speed'), sg.InputText(size=3),],
@@ -110,12 +112,11 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
             [sg.InputText(size=15), sg.InputText(size=15),sg.InputText(size=15), sg.InputText(size=15),
              sg.Push(), sg.Checkbox("Survival", key="-CHECKBOX16-", enable_events=True)],
 
-
-            [sg.Button('Ok'), sg.Button('Items'), sg.Button('Magic')] ]
+            [sg.Button('Potions'), sg.Button('Items'), sg.Button('Magic'), sg.Button('Save')] ]
 
 # Create the Window
-window = sg.Window('Digital Character Sheet V0.0.2', layout, size=(600, 700))
-
+window = sg.Window('Digital Character Sheet V0.0.3', layout, size=(600, 700))
+event, values = window.Read()
 # Event Loop to process "events" and get the "values" of the inputs
 
 while True:
@@ -125,10 +126,14 @@ while True:
     if event in ('Items'):
         show(df)
 
-    if event in ('Magic'):
-        show(df)
+   # if event in ('Magic'):
+        # show(df)
 
-    # if user closes window or clicks cancel
+    if event in ('Save'):
+        break
+
+
+# if user closes window or clicks cancel
     if event == sg.WIN_CLOSED or event == 'Cancel':
         break
 
