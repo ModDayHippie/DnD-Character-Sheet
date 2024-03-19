@@ -6,3 +6,8 @@ Currently a WIP
 
 well nothing really. atm its just a shell with all the boxes filled out. my first objectives is to add a save feature and all the items,potions,magic items spreadsheets for quick viewing for now
 before i get them automated
+
+*Moduals Needed*
+Pysimplegui
+Pandas
+Pandasgui
