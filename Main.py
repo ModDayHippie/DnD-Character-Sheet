@@ -24,17 +24,15 @@ import pandas as pd
 from pandasgui import show
 from pandasgui.datasets import pokemon, titanic, all_datasets
 
-EXCEL_FILE = 'Items.ods'
-df = pd.read_excel(EXCEL_FILE)
-
-
 # All the stuff inside your window.
 # make sure each line in the gui is spaced by one gap in the code
 
 sg.theme('DarkTeal9')
 
-EXCEL_FILE = 'Items.ods'
-df = pd.read_excel(EXCEL_FILE)
+EXCEL_FILE1 = 'Items2.ods'
+EXCEL_FILE2 = 'Magic.ods'
+df = pd.read_excel(EXCEL_FILE1)
+# df1 = pd.read_excel(EXCEL_FILE2)
 
 layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
              sg.Text('Class:'),
@@ -113,7 +111,7 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
              sg.Push(), sg.Checkbox("Survival", key="-CHECKBOX16-", enable_events=True)],
 
 
-            [sg.Button('Ok'), sg.Button('Cancel'), sg.Button('View')] ]
+            [sg.Button('Ok'), sg.Button('Items'), sg.Button('Magic')] ]
 
 # Create the Window
 window = sg.Window('Digital Character Sheet V0.0.2', layout, size=(600, 700))
@@ -124,7 +122,10 @@ while True:
     event, values = window.read()
 
     #if event in ('sg.InputText(key=1, size=15) = Club
-    if event in ('View'):
+    if event in ('Items'):
+        show(df)
+
+    if event in ('Magic'):
         show(df)
 
     # if user closes window or clicks cancel
