@@ -11,4 +11,13 @@ V0.2
 - cleaned up for posting to main
 - added a few sources of information and code i used
 
-V0.3 save state
+V0.3
+- removed files pycharm uploads to github by default
+- added info directory
+- resized window to make room for more components
+- added buttons for more items, mounts potions ect
+- filled out spreadsheets for items
+- added quantity bar to inventory items
+- removed unneeded imports
+- 
+
