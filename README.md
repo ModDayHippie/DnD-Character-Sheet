@@ -8,8 +8,9 @@ well nothing really. atm its just a shell with all the boxes filled out. my firs
 before i get them automated
 
 *Moduals Needed*
-Pysimplegui
 
-Pandas
+- Pysimplegui
 
-Pandasgui
+- Pandas
+
+- Pandasgui
