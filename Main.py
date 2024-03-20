@@ -37,8 +37,8 @@ df = pd.read_excel(EXCEL_FILE1)
 
 
 layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
-             sg.Text('Class:'),
-             sg.InputText(size=10), sg.Text('Lv'), sg.InputText(size=3)],
+             sg.Text('Class:'), sg.InputText(size=10), sg.Text('Lv'), sg.InputText(size=4), sg.Text('Armor Class'),
+             sg.InputText(size=8)],
 
             [sg.Text('Strength'), sg.InputText(size=3, key='HP'), sg.Text('Max Hp'), sg.InputText(size=3),
              sg.Text('Current Hp'),
