@@ -19,31 +19,33 @@
 # https://pypi.org/project/dnd-character/
 
 # Imports
-import PySimpleGUI as sg
 
+import PySimpleGUI as sg
 import pandas as pd
 from pandasgui import show
-
-
-# All the stuff inside your window.
-# make sure each line in the gui is spaced by one gap in the code
-
-sg.theme('DarkTeal9')
 
 EXCEL_FILE1 = 'Items2.ods'
 # EXCEL_FILE2 = 'Magic.ods'
 df = pd.read_excel(EXCEL_FILE1)
-# df = pd.read_excel(EXCEL_FILE2)
+# df2 = pd.read_excel(EXCEL_FILE2)
 
+# keys
 
-layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
+Race = sg.InputText(key='Race', size=10)
+
+# All the stuff inside your window.
+# make sure each line in the gui is spaced by one gap in the code
+
+sg.theme('DarkRed1')
+
+layout = [[sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.InputText(key='Race', size=10),
              sg.Text('Class:'), sg.InputText(size=10), sg.Text('Lv'), sg.InputText(size=4), sg.Text('Armor Class'),
              sg.InputText(size=8)],
 
             [sg.Text('Strength'), sg.InputText(size=3, key='HP'), sg.Text('Max Hp'), sg.InputText(size=3),
              sg.Text('Current Hp'),
-             sg.InputText(size=3), sg.Text('Amour Class'), sg.InputText(size=3),sg.Text('Init'),
-             sg.InputText(size=3),sg.Text('Speed'), sg.InputText(size=3),],
+             sg.InputText(size=3), sg.Text('Amour Class'), sg.InputText(size=3), sg.Text('Init'),
+             sg.InputText(size=3), sg.Text('Speed'), sg.InputText(size=3)],
 
             [sg.Text('Dexterity'), sg.InputText(size=6), sg.Text('Weapon Attacks'), sg.Text('Bonus To Attack'),
              sg.Text('Damage'), sg.Text('Skills')],
@@ -61,7 +63,7 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
              sg.InputText(size=8), sg.Push(), sg.Checkbox("Deception", key="-CHECKBOX3-", enable_events=True)],
 
             [sg.Text('Hit Dices'), sg.Text('Max'), sg.InputText(size=5), sg.Text('Current'),
-             sg.InputText(size=5), sg.Text('Gold'), sg.InputText(size=5),sg.Text('Silver'), sg.InputText(size=5),
+             sg.InputText(size=5), sg.Text('Gold'), sg.InputText(size=5), sg.Text('Silver'), sg.InputText(size=5),
              sg.Text('Copper'), sg.InputText(size=5)],
 
             [sg.Text('abilities'), sg.InputText(size=15), sg.InputText(size=15), sg.Text('Saving Throws'),
@@ -92,26 +94,26 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
              sg.Push(), sg.Checkbox("Perception", key="-CHECKBOX10-", enable_events=True)],
 
             [sg.Text('Death saves passed'), sg.InputText(size=3), sg.Text('Death saves failed'),
-             sg.InputText(size=3) , sg.Push(),
+             sg.InputText(size=3), sg.Push(),
              sg.Checkbox("Performance", key="-CHECKBOX11-", enable_events=True)],
 
             [sg.Push(), sg.Text('Inventory'), sg.Push(),
              sg.Checkbox("Persuasion", key="-CHECKBOX12-", enable_events=True)],
 
-            [sg.InputText(size=15),sg.InputText(size=3), sg.InputText(size=15),sg.InputText(size=3),
-             sg.InputText(size=15),sg.InputText(size=3), sg.Push(),
+            [sg.InputText(size=15), sg.InputText(size=3), sg.InputText(size=15), sg.InputText(size=3),
+             sg.InputText(size=15), sg.InputText(size=3), sg.Push(),
              sg.Checkbox("Religion", key="-CHECKBOX13-", enable_events=True)],
 
-            [sg.InputText(size=15),sg.InputText(size=3), sg.InputText(size=15),sg.InputText(size=3),
-             sg.InputText(size=15),sg.InputText(size=3),
+            [sg.InputText(size=15), sg.InputText(size=3), sg.InputText(size=15), sg.InputText(size=3),
+             sg.InputText(size=15), sg.InputText(size=3),
              sg.Push(), sg.Checkbox("Slight of Hand", key="-CHECKBOX14-", enable_events=True)],
 
-            [sg.InputText(size=15),sg.InputText(size=3), sg.InputText(size=15),sg.InputText(size=3),
-             sg.InputText(size=15),sg.InputText(size=3),
+            [sg.InputText(size=15), sg.InputText(size=3), sg.InputText(size=15), sg.InputText(size=3),
+             sg.InputText(size=15), sg.InputText(size=3),
              sg.Push(), sg.Checkbox("Stealth", key="-CHECKBOX15-", enable_events=True)],
 
-            [sg.InputText(size=15),sg.InputText(size=3), sg.InputText(size=15),sg.InputText(size=3),
-             sg.InputText(size=15),sg.InputText(size=3),
+            [sg.InputText(size=15), sg.InputText(size=3), sg.InputText(size=15), sg.InputText(size=3),
+             sg.InputText(size=15), sg.InputText(size=3),
              sg.Push(), sg.Checkbox("Survival", key="-CHECKBOX16-", enable_events=True)],
 
             [sg.Button('Potions'), sg.Button('Items'), sg.Button('Magic'), sg.Button('Gear'), sg.Button('Save')],
@@ -119,7 +121,8 @@ layout = [  [sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), s
             [sg.Button('Tools'), sg.Button('Armor'), sg.Button('Mounts/Tack')]]
 
 # Create the Window
-window = sg.Window('Digital Character Sheet V0.0.3', layout, size=(700, 750))
+
+window = sg.Window('Digital Character Sheet V0.3.4', layout, size=(700, 750))
 event, values = window.Read()
 
 # Event Loop to process "events" and get the "values" of the inputs
@@ -127,20 +130,20 @@ event, values = window.Read()
 while True:
     event, values = window.read()
 
-    #if event in ('sg.InputText(key=1, size=15) = Club
-    if event in ('Items'):
+    # if event in ('sg.InputText(key=1, size=15) = Club
+    if event in 'Items':
         show(df)
 
-   # if event in ('Magic'):
+   # if event in 'Magic':
         # show(df)
 
-    if event in ('Save'):
+    if event in 'Save':
+        print(Race)
         break
-
 
 # if user closes window or clicks cancel
+
     if event == sg.WIN_CLOSED or event == 'Cancel':
         break
-
 
 window.close()

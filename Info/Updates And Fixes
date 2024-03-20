@@ -20,6 +20,13 @@ V0.3
 - added quantity bar to inventory items
 - removed unneeded imports
 - added armor class
+
+V0.3.4
 - moved some items around the gui
+- decided on a new version format V0.0.0 (currently at V0.3.4)
+- got rid of the todo.txt in /info, decided to use issues tab on github insted
+- PeP8
+
+
 
 
