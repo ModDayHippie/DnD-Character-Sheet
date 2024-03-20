@@ -1,0 +1,17 @@
+Name,,,Price,Speed,Carrying Capacity,,,,Name,,Price,Weight,Name,Price,AC,Cargo (Tons),HP,Crew,Threshold,Passengers,Speed
+Camel,,,50 gp,50 ft,480 lb.,,,,Barding,,x4,x2,Galley,"30,000 gp",15,150,500,80,20,-,4 mph
+Donkey or Mule,,,8 gp,40 ft,420 lb.,,,,Bit and Bridle,,2 gp,1 lb.,Keelboat,"3,000 gp",15,0.5,100,1,10,6,1 mph
+Elephant,,,200 gp,40 ft,"1,320 lb.",,,,Carriage,,100 gp,600 lb.,Longship,"10,000 gp",15,10,300,40,15,150,3 mph
+"Horse, Draft",,,50 gp,40 ft,540 lb.,,,,Cart,,15 gp,200 lb.,Rowboat,50 gp,11,-,50,-,-,3,1.5 mph
+"Horse, Riding",,,75 gp,60 ft,480 lb.,,,,Chariot,,250 gp,100 lb.,Sailing Ship,"10,000 gp",15,100,300,20,15,20,2 mph
+Mastiff,,,25 gp,40 ft,195 lb.,,,,Feed (per day),,5 cp,10 lb.,Warship,"25,000 gp",15,200,500,60,20,60,2.5 mph
+Pony,,,30 gp,40 ft,225 lb.,,,,Saddle,,,,,,,,,,,,
+Warhorse,,,400 gp,60 ft,540 lb.,,,,Exotic,,60 gp,40 lb.,,,,,,,,,
+,,,,,,,,,Military,,20 gp,30 lb.,,,,,,,,,
+,,,,,,,,,Pack,,5 gp,15 lb.,,,,,,,,,
+,,,,,,,,,Riding,,10 gp,25 lb.,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Saddlebags,,4 gp,8 lb.,,,,,,,,,
+,,,,,,,,,Sled,,20 gp,300 lb.,,,,,,,,,
+,,,,,,,,,Stabling (per day),,5 sp,-,,,,,,,,,
+,,,,,,,,,Wagon,,35 gp,400 lb.,,,,,,,,,

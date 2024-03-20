@@ -1,0 +1,14 @@
+Category,Name,cp,sp,ep,gp,pp,AC,Weight,Stealth,Strength
+Light Armor,Padded,500,50,10,5,0.5,11 + Dex,8,Disadvantage,
+Light Armor,Leather,1000,100,20,10,1,11 + Dex,10,,
+Light Armor,Studded Leather,4500,450,90,45,4.5,12 + Dex,13,,
+Medium Armor,Hide,1000,100,20,10,1,12 + Dex(max2),12,,
+Medium Armor,Chain Shirt,5000,500,100,50,5,13 + Dex(max2),20,,
+Medium Armor,Scail Mail,5000,500,100,50,5,14 + Dex(max2),45,Disadvantage,
+Medium Armor,Breastplate,40000,4000,800,400,40,14 + Dex(max2),20,,
+Medium Armor,Half Plate,75000,7500,1500,750,75,15 + Dex(max2),40,Disadvantage,
+Heavy Armor,Ring Mail,3000,300,60,30,3,14,40,Disadvantage,
+Heavy Armor,Chain Mail,7500,750,150,75,7.5,16,55,Disadvantage,Required Strength 13
+Heavy Armor,Splint,20000,2000,400,200,20,17,60,Disadvantage,Required Strength 15
+Heavy Armor,Plate,150000,15000,3000,1500,150,18,65,Disadvantage,Required Strength 15
+Heavy Armor,Shields,1000,100,20,10,1,,6,,

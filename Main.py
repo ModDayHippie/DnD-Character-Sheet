@@ -15,14 +15,90 @@
 
 # Item Spreadsheet Source
 # https://docs.google.com/spreadsheets/d/10q9-pMNvQZE5T7Zuco4PJsYW-rwES_LfMp0-wUerfyw/edit#gid=0
+# Other usefull links
 # https://www.reddit.com/r/learnpython/comments/vlnb0c/pysimplegui_window_resizes_when_pandasgui/
 # https://pypi.org/project/dnd-character/
+# https://www.youtube.com/watch?v=LzCfNanQ_9c
 
 # Imports
 
 import PySimpleGUI as sg
 import pandas as pd
 from pandasgui import show
+
+# test lines to open multipul csv files
+
+def make_armour_win() -> None:
+    """
+    This function shows the Armour window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    armour_df = pd.read_csv('Armor.csv')
+    armour_df = armour_df.fillna('-')
+    sg.popup_scrolled(armour_df, title='Armour', size=(125, 50))
+
+def make_potions_win() -> None:
+    """
+    This function shows the Potions window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    Potion_df = pd.read_csv('Potions.csv')
+    Potion_df = Potion_df.fillna('-')
+    sg.popup_scrolled(Potion_df, title='Potions', size=(125, 50))
+
+def make_Magic_win() -> None:
+    """
+    This function shows the Armour window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    Magic_df = pd.read_csv('Magic.csv')
+    Magic_df = Magic_df.fillna('-')
+    sg.popup_scrolled(Magic_df, title='Magic', size=(125, 50))
+
+def make_Gear_win() -> None:
+    """
+    This function shows the Armour window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    Gear_df = pd.read_csv('Gear.csv')
+    Gear_df = Gear_df.fillna('-')
+    sg.popup_scrolled(Gear_df, title='Gear', size=(125, 50))
+
+def make_Tools_win() -> None:
+    """
+    This function shows the Armour window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    Tools_df = pd.read_csv('Tools.csv')
+    armour_df = Tools_df.fillna('-')
+    sg.popup_scrolled(Tools_df, title='Tools', size=(125, 50))
+
+def make_Mounts_win() -> None:
+    """
+    This function shows the Armour window
+
+    :return: None
+
+    :note: This function is called by clicking the 'Armor' button in the main window.
+    """
+    Mounts_df = pd.read_csv('Mount&tack.csv')
+    Mounts_df = Mounts_df.fillna('-')
+    sg.popup_scrolled(Mounts_df, title='Mounts', size=(125, 50))
 
 EXCEL_FILE1 = 'Items2.ods'
 # EXCEL_FILE2 = 'Magic.ods'
@@ -31,7 +107,8 @@ df = pd.read_excel(EXCEL_FILE1)
 
 # keys
 
-Race = sg.InputText(key='Race', size=10)
+# Race = sg.InputText(key='Race', size=10)
+# Race = values['-Race-']
 
 # All the stuff inside your window.
 # make sure each line in the gui is spaced by one gap in the code
@@ -67,7 +144,8 @@ layout = [[sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.
              sg.Text('Copper'), sg.InputText(size=5)],
 
             [sg.Text('abilities'), sg.InputText(size=15), sg.InputText(size=15), sg.Text('Saving Throws'),
-             sg.Push(), sg.Checkbox("History", key="-CHECKBOX4-", enable_events=True)],
+             sg.Text('Plat'), sg.InputText(size=5), sg.Push(),
+             sg.Checkbox("History", key="-CHECKBOX4-", enable_events=True)],
 
             [sg.Text('abilities'), sg.InputText(size=15), sg.InputText(size=15),
              sg.Checkbox("Strength", key="-CHECKBOX17-", enable_events=True), sg.Push(),
@@ -118,28 +196,51 @@ layout = [[sg.Text('Player Name:'), sg.InputText(size=11), sg.Text('Race:'), sg.
 
             [sg.Button('Potions'), sg.Button('Items'), sg.Button('Magic'), sg.Button('Gear'), sg.Button('Save')],
 
-            [sg.Button('Tools'), sg.Button('Armor'), sg.Button('Mounts/Tack')]]
+            [sg.Button('Tools'), sg.Button('Armor'), sg.Button('Mounts/Tack'), sg.Button('Undo')]]
 
 # Create the Window
 
-window = sg.Window('Digital Character Sheet V0.3.4', layout, size=(700, 750))
+window = sg.Window('Digital Character Sheet V0.3.5', layout, size=(700, 750))
 event, values = window.Read()
+
+# Race = (values['-Race-'])
 
 # Event Loop to process "events" and get the "values" of the inputs
 
 while True:
     event, values = window.read()
 
-    # if event in ('sg.InputText(key=1, size=15) = Club
     if event in 'Items':
         show(df)
 
-   # if event in 'Magic':
-        # show(df)
+    if event in 'Magic':
+        make_Magic_win()
 
     if event in 'Save':
-        print(Race)
+        # print line is for testing
+        sg.popup("Currently a WIP")
         break
+
+    if event in 'Potions':
+        make_potions_win()
+
+    if event in 'Gear':
+        make_Gear_win()
+
+    if event in 'Tools':
+        make_Tools_win()
+
+    if event in 'Armor':
+        if event == ('Armor'):
+            make_armour_win()
+
+    if event in 'Mounts/Tack':
+        make_Mounts_win()
+
+    if event in 'Undo':
+        sg.popup("Currently a WIP")
+
+
 
 # if user closes window or clicks cancel
 

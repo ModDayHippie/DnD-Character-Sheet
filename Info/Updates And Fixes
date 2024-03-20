@@ -27,6 +27,14 @@ V0.3.4
 - got rid of the todo.txt in /info, decided to use issues tab on github insted
 - PeP8
 
+V0.3.5
+- added platnium currency
+- added undo button
+- added armor.cvs made from the .ods file and converted by https://github.com/mathewrtaylor
+- converted the rest of the .ods files to .cvs
+- created the old .ods dir to hold the original files.
+- added "currently WIP" popups to all non working windows
+- made all the buttons (items, magic, ect) show a spread sheet
 
 
 
